@@ -1,0 +1,168 @@
+@use "./variables";
+@use "./mixins";
+
+/* Box-sizing border-box */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: variables.$font-family;
+}
+
+header {
+    background-color: #bbbbbb;
+    padding: 1rem;
+    text-align: center;
+    .site-header {
+        display: none;
+
+        &__logo {
+            font-size: 2rem;
+
+            @include mixins.tablet {
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        &__links {
+            display: none;
+
+            @include mixins.tablet {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        &__wrapper {
+            display: none;
+
+            @include mixins.tablet {
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        
+
+    }
+
+    @include mixins.tablet {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+    
+
+    
+
+    
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #eeeeee;
+    padding: 1rem;
+    height: 20rem;
+
+    @include mixins.desktop {
+        height: 25vw;
+    }
+}
+
+main {
+    border-top: 5px solid #999999;
+    border-bottom: 5px solid #999999;
+
+    @include mixins.tablet {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+.article-list {
+    background-color: #fdfdfd;
+    
+    @include mixins.tablet {
+        flex-grow: 1;
+    }
+
+    @include mixins.desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;     
+        flex-wrap: wrap;  
+
+    }
+}
+
+.article {
+    background-color: #eeeeee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin: 1rem;
+
+    @include mixins.desktop {
+        flex-basis: 20%;
+        width: 150px;
+    }
+    
+
+    &__title {
+        margin: 0;
+        padding: 1rem;
+        border-bottom: 1px dashed #555555;
+        text-align: center;
+    }
+
+    &__content {
+        height: 10rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.weather-list {
+    background-color: #dddddd;
+    padding: 1rem;
+
+    @include mixins.tablet {
+
+    }
+}
+
+.weather {
+    margin: 1rem 0;
+    padding: 3rem 0;
+    text-align: center;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    width: 20rem;
+
+    h4 {
+        margin-top: 0;
+        font-weight: normal;
+    }
+
+    .weather__description {
+        font-weight: bold;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    background-color: #bbbbbb;
+}
